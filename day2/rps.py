@@ -1,8 +1,8 @@
-def get_input(file_name):
+def get_input(file_name : str) -> list[list[str]]:
     with open(file_name, "r") as file:
         return [round.split() for round in file]
 
-def get_score1(data):
+def get_score1(data : list[list[str]]) -> int:
     score = 0
     for round in data:
         if round[1] == "X": # player chose rock
@@ -25,7 +25,7 @@ def get_score1(data):
             score += 3
     return score
 
-def get_score2(data):
+def get_score2(data : list[list[str]]) -> int:
     score = 0
     for round in data:
         if round[1] == "X": # player loses
